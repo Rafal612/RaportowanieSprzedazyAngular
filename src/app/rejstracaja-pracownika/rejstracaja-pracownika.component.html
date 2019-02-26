@@ -1,0 +1,48 @@
+<form [formGroup]="form">
+    <div class="form-group">
+      <label for="imie">Imię</label>
+      <input 
+        formControlName="imie" 
+        id="imie"
+        type="text"
+        class="form-control">
+        <div *ngIf="imie.touched && imie.invalid" 
+          class="alert alert-danger" >
+          <div *ngIf="imie.errors.required">Imię jest wymagane</div>
+          <div *ngIf="imie.errors.minlength">Imię jest za krutkie</div>
+          <div *ngIf="imie.errors.maxlenght">Imię jest za długie</div>
+        </div>
+    
+    </div>
+    <div class="form-group">
+    <label for="drugieImie">Drugie Imię</label>
+    <input 
+      formControlName="drugieImie" 
+      id="drugieImie"
+      type="text"
+      class="form-control">
+      <div *ngIf="drugieImie.touched && drugieImie.invalid" 
+        class="alert alert-danger" >
+        <div *ngIf="drugieImie.errors.minlength">Drugie imię jest za krutkie</div>
+        <div *ngIf="drugieImie.errors.maxlenght">Drugie imię jest za długie</div>
+      </div>
+  
+    </div>
+    
+    <div class="form-group"> 
+    <label for="nazwisko">Nazwisko</label>
+    <input 
+    formControlName="nazwisko" 
+      id="nazwisko"
+      type="text"
+      class="form-control">
+      <div *ngIf="nazwisko.touched && nazwisko.invalid" 
+        class="alert alert-danger" >
+        <div *ngIf="nazwisko.errors.required">Nazwisko jest wymagane</div>
+        <div *ngIf="nazwisko.errors.minlength">Nazwisko jest za krutkie</div>
+        <div *ngIf="nazwisko.errors.maxlenght">Nazwisko jest za długie</div>
+      </div>
+   
+    </div>
+
+  </form>
